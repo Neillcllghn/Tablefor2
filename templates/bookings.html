@@ -2,6 +2,62 @@
 
 {% block content %}
 
+<h4 class="center-align">Your Bookings</h4>
+    <div class="container">
+    {% for booking in booking_list %}
+    <div class="divider"></div>
+    <div class="section">
+      {% if booking.approved %}
+        <h5><strong>Day:</strong> {{ booking.day }}</h5>
+        <p><strong>Name:</strong> {{ booking.user }}</p>
+        <p><strong>email:</strong> {{ booking.email }}</p>
+        <p><strong>No of people:</strong> {{ booking.group_size }}</p>
+        <p><strong>Time:</strong> {{ booking.time }}</p>
+        <p><strong>Status:</strong> Approved</p>
+        <a href="#modal1-{{ booking.id }}" class="modal-trigger">
+          <button class="submit-button btn red">Delete Booking</button>
+        </a>
+        <div id="modal1-{{ booking.id }}" class="modal">
+          <div class="modal-content">
+            <h4>Are you sure you want to delete this Booking?</h4>
+            <p>This action cannot be undone!</p>
+          </div>
+          <div class="modal-footer">
+            <a href="/delete/{{ booking.id }}" class="btn red">DELETE</a>
+            <a href="{% url 'bookings' %}" class="btn green accent-4">CLOSE</a>
+          </div>
+        </div>
+      {% else %}
+          <h5>Booking pending Approval</h5>
+          <h5><strong>Day:</strong> {{ booking.day }}</h5>
+          <p><strong>Name:</strong> {{ booking.user }}</p>
+          <p><strong>email:</strong> {{ booking.email }}</p>
+          <p><strong>No of people:</strong> {{ booking.group_size }}</p>
+          <p><strong>Time:</strong> {{ booking.time }}</p>
+          <a href="/update/{{ booking.id }}">
+            <button class="submit-button btn green accent-4">Edit Booking</button>
+          </a>
+          <a href="#modal1-{{ booking.id }}" class="modal-trigger">
+            <button class="submit-button btn red">Delete Booking</button>
+          </a>
+          <div id="modal1-{{ booking.id }}" class="modal">
+            <div class="modal-content">
+              <h4>Are you sure you want to delete this Booking?</h4>
+              <p>This action cannot be undone!</p>
+            </div>
+            <div class="modal-footer">
+              <a href="/delete/{{ booking.id }}" class="btn red">DELETE</a>
+              <a href="{% url 'bookings' %}" class="btn green accent-4">CLOSE</a>
+            </div>
+          </div>
+      {% endif %}
+
+    </div>
+    {% empty %}
+    <h5>You have nothing Booked!!</h5>
+    {% endfor %}
+    
+</div>
 
 
 {%endblock%}
