@@ -9,3 +9,5 @@ urlpatterns = [
     path('update/<booking_id>', views.update_booking, name='update_bookings'),
     path('delete/<booking_id>', views.delete_booking, name='delete'),
 ]
+
+urlpatterns += staticfiles_urlpatterns()
