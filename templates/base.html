@@ -12,6 +12,53 @@
 </head>
 <body>
     <nav>
+        <div class="nav-wrapper">
+            <a href="" class="brand-logo center">TableFor2</a>
+            <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fa-solid fa-bars"></i></a>
+        <ul class="left hide-on-med-and-down">
+           <li><a href="{% url 'home' %}">HOME</a></li>
+          {% if user.is_authenticated %}
+          <li class="nav-item">
+            <a class="nav-link" href="#">Make a Booking</a> <!--{% url 'create_bookings' %}-->
+        </li>
+             <li class="nav-item">
+                <a class="nav-link" href="{% url 'bookings' %}">Your Bookings</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="#">Logout</a> <!--{% url 'account_logout' %}-->
+              </li>
+                    {% else %}
+              <li class="nav-item">
+                  <a class="nav-link" href="#">Register</a> <!--{% url 'account_signup' %}-->
+              </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Login</a> <!--{% url 'account_login' %}-->
+              </li>
+          {% endif %}
+        </ul>
+      </div>
+    </nav>
+    <ul class="sidenav" id="mobile-demo">
+      <li><a href="{% url 'home' %}">HOME</a></li>
+      {% if user.is_authenticated %}
+            <li class="nav-item">
+                <a class="nav-link" href="#">Make a Booking</a> <!--{% url 'create_bookings' %}-->
+            </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'bookings' %}">Your Bookings</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="#">Logout</a> <!--{% url 'account_logout' %}-->
+              </li>
+                    {% else %}
+              <li class="nav-item">
+                  <a class="nav-link" href="#">Register</a> <!--{% url 'account_signup' %}-->
+              </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Login</a> <!--{% url 'account_login' %}-->
+              </li>
+          {% endif %}
+    </ul>
 
     </nav>
 
