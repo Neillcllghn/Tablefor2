@@ -19,3 +19,24 @@ class BookingList(generic.ListView):
 
     def get_queryset(self):
         return Booking.objects.filter(user=self.request.user)
+
+# View to create a booking.
+
+
+class BookingCreate(CreateView):
+    model = Booking
+    template_name = 'create_bookings.html'
+    form_class = BookingForm
+
+    def get_success_url(self):
+        return self.request.path
+
+    def form_valid(self, form):
+        form.instance.user = self.request.user
+        messages.add_message(self.request, messages.INFO,
+                             'Booking was made successfully')
+        return super().form_valid(form)
+
+    def form_invalid(self, form):
+        form.add_error(None, 'Ups.....Something went wrong')
+        return super().form_invalid(form)

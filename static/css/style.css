@@ -43,3 +43,42 @@ h1, h2 {
     color: #252525;
     box-shadow: inset 200px 0 0 0 #f9e506;
   }
+
+  .form {
+    margin: 150px 10% 0 0;
+    color: #252525;
+    background-color: #fff;
+    max-width: 400px;
+    position: absolute;
+    left: 10%;
+    padding: 30px;
+    border: 5px solid black;
+  }
+  
+  .messages{
+    padding: 0.5em;
+    color: #fff;
+    background: lightgreen;
+    width: 100%;
+    text-align: center;
+    font-size: 25px;
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0px);
+    transition: visibility 0s, opacity 250ms, transform 250ms;
+  }
+  
+  
+  .messages.hide{
+    padding: 0.5em;
+    color: #fff;
+    background: lightgreen;
+    width: 100%;
+    text-align: center;
+    font-size: 25px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-10px);
+    transition: visibility 0s 250ms, opacity 250ms, transform 250ms;
+  }
+  

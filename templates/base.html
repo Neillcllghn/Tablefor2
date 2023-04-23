@@ -19,7 +19,7 @@
            <li><a href="{% url 'home' %}">HOME</a></li>
           {% if user.is_authenticated %}
           <li class="nav-item">
-            <a class="nav-link" href="#">Make a Booking</a> <!--{% url 'create_bookings' %}-->
+            <a class="nav-link" href="{% url 'create_bookings' %}">Make a Booking</a>
         </li>
              <li class="nav-item">
                 <a class="nav-link" href="{% url 'bookings' %}">Your Bookings</a>
@@ -42,7 +42,7 @@
       <li><a href="{% url 'home' %}">HOME</a></li>
       {% if user.is_authenticated %}
             <li class="nav-item">
-                <a class="nav-link" href="#">Make a Booking</a> <!--{% url 'create_bookings' %}-->
+                <a class="nav-link" href="{% url 'create_bookings' %}">Make a Booking</a>
             </li>
               <li class="nav-item">
                 <a class="nav-link" href="{% url 'bookings' %}">Your Bookings</a>
@@ -60,7 +60,15 @@
           {% endif %}
     </ul>
 
-    </nav>
+    <div class="container">
+        {% if messages %}
+          {% for message in messages %}
+              <ul class="messages">
+                <li class="{{ message.tag }}">{{ message | safe }}</li>
+              </ul>
+          {% endfor %}
+        {% endif %}
+        </div>
 
     <main>
         {% block content %}
