@@ -54,7 +54,11 @@
 
     </div>
     {% empty %}
-    <h5>You have nothing Booked!!</h5>
+    <div class="container">
+      <div class="row card-panel red lighten-5"><h5 class="center-align">You have nothing Booked!!</h5>
+        <p class="center-align">To make a booking, please click <a href="{% url 'create_bookings' %}"><strong>here</strong>!</a> </p>
+      </div>
+    </div>
     {% endfor %}
     
 </div>
