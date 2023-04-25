@@ -53,10 +53,19 @@ def update_booking(request, booking_id):
     if request.method == 'POST':
         form = BookingForm(request.POST, instance=booking)
         if form.is_valid():
+            email = form.cleaned_data['email']
+            day = form.cleaned_data['day']
+
+            Booking.objects.filter(email=booking).update(
+                email=email,
+                day=day,
+            ),
             messages.add_message(request, messages.INFO,
                                  'Booking was updated successfully')
             form.save()
             return redirect('bookings')
+        else:
+            print(form.add_error)
     form = BookingForm(instance=booking)
     context = {
         'form': form

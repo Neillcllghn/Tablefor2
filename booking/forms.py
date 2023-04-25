@@ -54,17 +54,17 @@ class BookingForm(forms.ModelForm):
             raise ValidationError("The Time selected is incorrect")
 
     def clean(self):
-        cleaned_data = super(BookingForm, self).clean()
-        email = cleaned_data.get('email')
-        day = cleaned_data.get('day')
+        email = self.cleaned_data.get('email')
+        day = self.cleaned_data.get('day')
 
         self.clean_future_time_day()
 
-        try:
-            Booking.objects.get(email=email, day=day)
-        except Booking.DoesNotExist:
-            return cleaned_data
+        if hasattr(self, 'instance'):
+            booking_all = Booking.objects.exclude(
+                email=self.instance.email).filter(email=email)
         else:
-            raise ValidationError(('A booking already exists on that day for '
-                                   'the email used'),
-                                  code='booking_already_exist')
+            booking_all = Booking.objects.all().filter(email=email)
+        for item in booking_all:
+            if day == item.day and email == item.email:
+                raise forms.ValidationError("A booking already exists on "
+                                            "that day for the email used")
