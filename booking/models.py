@@ -28,7 +28,7 @@ class Booking(models.Model):
     approved = models.BooleanField(default=False)
 
     class Meta:
-        ordering = ["created_on", "day", "time"]
+        ordering = ["day", "time"]
 
     def __str__(self):
         return f'{self.user.username} | Email: {self.email} | '
