@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tablefor2, Resturant, Booking">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
@@ -13,7 +14,7 @@
 <body>
     <nav>
         <div class="nav-wrapper">
-            <a href="" class="brand-logo center">TableFor2</a>
+            <a href="{% url 'home' %}" class="brand-logo center">TableFor2</a>
             <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fa-solid fa-bars"></i></a>
         <ul class="left hide-on-med-and-down">
            <li><a href="{% url 'home' %}">HOME</a></li>
