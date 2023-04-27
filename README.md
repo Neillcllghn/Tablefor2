@@ -1,108 +1,331 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# TableFor2 - Django Resturant Booking System.
+Tablefor2 is a responsive website allowing visitors to view on a range of devices. It allows users to view times and a menu (consisting of Starter, Main course and Dessert) and make a booking/reservation while signed in.
 
-Welcome Neillcllghn,
+### IMAGE HERE
+---
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+## CONTENTS
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+* [User Experience](#user-experience-ux)
+  * [User Stories](#user-stories)
 
-## Gitpod Reminders
+* [Design](#design)
+  * [Colour Scheme](#colour-scheme)
+  * [Typography](#typography)
+  * [Imagery](#imagery)
+  * [Wireframes](#wireframes)
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+* [Features](#features)
+  * [General Features on Each Page](#general-features-on-each-page)
+  * [Future Implementations](#future-implementations)
+  * [Accessibility](#accessibility)
 
-`python3 -m http.server`
+* [Technologies Used](#technologies-used)
+  * [Languages Used](#languages-used)
+  * [Frameworks, Libraries & Programs Used](#frameworks-libraries--programs-used)
 
-A blue button should appear to click: _Make Public_,
+* [Deployment & Local Development](#deployment--local-development)
+  * [Deployment](#deployment)
+  * [Local Development](#local-development)
+    * [How to Fork](#how-to-fork)
+    * [How to Clone](#how-to-clone)
 
-Another blue button should appear to click: _Open Browser_.
+* [Testing](#testing)
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
-
-A blue button should appear to click: _Make Public_,
-
-Another blue button should appear to click: _Open Browser_.
-
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
-
-To log into the Heroku toolbelt CLI:
-
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
-
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
-
-------
-
-## Release History
-
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
-
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
-
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
-
-**July 2 2021:** Remove extensions that are not available in Open VSX.
-
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
-
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
-
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
-
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
-
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
-
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
-
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
-
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
-
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
-
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
-
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
-
-------
-
-## FAQ about the uptime script
-
-**Why have you added this script?**
-
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
-
-**How will this affect me?**
-
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
-
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
-
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
-
-**So….?**
-
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
-
-**Can I opt out?**
-
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
-
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
-
-**Anything more?**
-
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
+* [Credits](#credits)
+  * [Code Used](#code-used)
+  * [Content](#content)
+  * [Media](#media)
+  * [Acknowledgments](#acknowledgments)
 
 ---
 
-Happy coding!
+## User Experience (UX)
+
+Tablefor2 is an online booking system that allows users of the site to register online to make/edit or cancel bookings.
+
+The client would like users of the site to register with the site to allow for user identifcation, select times that are listed on the site so to avoid selecting out of hour periods, provide an unique email to all bookings so that the client can make contact with the user if need be (future updates to the system), plus to provide each booking as unique to avoid double booking.
+
+#### Key information for the site:
+- What is on the Menu.
+- What Times are availble for booking.
+- Register/Sign in page.
+- How to make a booking.
+- View bookings already made.
+- Which bookings are pending approval (which can be edited or deleted) and approved (which can only be deleted by the user).
+
+### User Stories
+
+#### Client Goals:
+- To be able to view the site on a range of device sizes.
+- To make it easy for potential customers (the user) to find out what is on offer (menu) and how to make a booking.
+- To make it clear to the user what times are available for bookings.
+- To allow users to view the bookings made and prevent double bookings.
+- Approve bookings.
+
+#### User/Customer Goals:
+- I want to know what Tablefor2 offers in terms of a menu etc.
+- I want to register an account so that I can make a booking/reservation.
+- I want to make a booking by selecting a time and date for my reservation.
+- I want to be able to view a list of my bookings so that I know what has been booked etc.
+- I want to be able to edit a booking so that I can make changes if needed and prior to approval.
+- I want to be able to cancel/delete a booking (whether it is pending approval or approved).
+
+- - -
+
+## Design
+
+### Typography
+
+The Font used is lato & Merriweather which is easy to read and easy on the eye.
+
+## Features
+
+The website is comprised of a home page, login, register and sign out pages, a booking page, an update bookings page and a Your Bookings page.
+
+All Pages on the website are responsive and have:
+
+- The title of the site at the top of every page. This title also acts as a link back to the home page.
+![image](https://user-images.githubusercontent.com/109948740/234081436-51b304c9-8f15-40bb-a40c-e52def0e926d.png)
+
+- The Buttons will highlight when the cursor is hovering over them, This is to indicate to the user that this button is the one that is being selected:
+
+When Button is not highlighted:
+
+![image](https://user-images.githubusercontent.com/109948740/234083160-55a69603-b4bb-4f03-bd84-e797d6f93c4f.png)
+
+When Button is highlighted:
+
+![image](https://user-images.githubusercontent.com/109948740/234083620-b09e5077-ac13-4d97-b97c-aac9d73fa55d.png)
+
+- - -
+
+### General features on each page
+
+### The Home Page
+
+The home page of TableFor2 displays the sites name as a title and then a container which holds some welcome text, the times and menu. The Welcome Text will change for the user, from indicating that the user will need to sign in to make a booking to providing links to make a booking when signed in:
+
+- When the user is not registered or signed in:
+  ![image](https://user-images.githubusercontent.com/109948740/234085541-666f3c25-b19f-49c7-ab91-0d5935b15c17.png)
+
+
+- When the user is signed in:
+  ![image](https://user-images.githubusercontent.com/109948740/234085691-572b8c89-130c-45ae-bb7b-2a0b537843c3.png)
+
+
+Another feature to notify that the user is signed in or not is the Nav-bar will change from providing links to the Register/Login pages to Make a Booking, Your Bookings and Logout pages:
+
+- When the user is not registered or signed in:
+
+  ![image](https://user-images.githubusercontent.com/109948740/234086164-c78ad6b0-7a59-46ca-b78d-15ef42c049d4.png)
+
+
+- When the user is signed in:
+
+  ![image](https://user-images.githubusercontent.com/109948740/234086102-31519ca7-2e85-4294-81de-64774032ab85.png)
+
+
+The Times portion of the home page (this is displayed to the user, whether they are logged in or not) and all times are based on GMT, which means that users will need to take into account the time difference if located in a different timezone:
+
+![image](https://user-images.githubusercontent.com/109948740/234086515-004fe18f-fe1a-48d4-91af-799e131a23fa.png)
+
+The Menu is also displayed to the user regardless of login/Registeration and is a collapsible list when clicked on consisting of Starter, Main Course and Dessert selections:
+
+![image](https://user-images.githubusercontent.com/109948740/234087251-2952bee7-0da9-4b7f-aa53-c531c2172238.png)
+
+![image](https://user-images.githubusercontent.com/109948740/234087288-096b30da-d1b6-483d-a379-b4eb1a8a870e.png)
+
+- - -
+
+### Registeration Page
+
+This consist of a title, a link to login if you are already have an account, a means to type in a username, and email (optional) and a password.
+
+![image](https://user-images.githubusercontent.com/109948740/234365245-18ba1fd9-f18b-41fd-8415-f60263dac061.png)
+
+
+- - -
+
+### Sign in page
+
+This consist of a title, a link to register if you do not have an account, a means to type in your username and password. Furthermore, it has a remember me checkbox just so the user's details will be saved on the system.
+
+![image](https://user-images.githubusercontent.com/109948740/234366047-97a1815b-1afc-4f73-bf4d-5d9669d469a7.png)
+
+- - -
+
+### Sign out page
+
+This consist of a title, and a signout button:
+
+![image](https://user-images.githubusercontent.com/109948740/234367296-b3b65089-0f1e-4d30-9602-7b03d3d68902.png)
+
+- - -
+
+### Make a Booking Page:
+
+This consists of short sentences outlining what the user can and cannot do such as how many guests the user can have, a link to the home page for the user to be reminded of the available times and an additional note that each booking must have an email which will give a booking its uniqueness and so if the user wishes to book on behalf of a friend on the same day as a booking they made, a different email will allow the user to proceed with the booking.
+
+The user will be notifed by error message if the following happens:
+- Double booking - as mentioned above, if the user inputs the same email and selects the same day as a booking that is already made, it will be rejected.
+- Day in the past - if the user selects a day in the past, an error message will appear preventing the user from booking.
+- Time in the past - if the user selects a time in the past, an error message will appear preventing the user from booking.
+- Number of guests - if the user selects more than 6 and less than 1, an error message will appear preventing the user from booking.
+
+![image](https://user-images.githubusercontent.com/109948740/234372929-2c1a2e5a-9591-4fe6-b0a3-699dffc5e865.png)
+
+- - -
+
+### Your Bookings page:
+
+This outlines the bookings the user has made, whether it is pending approval or is approved. It is also the page in which the user can edit bookings but only if they are pending approval. Any Booking that is approved can only be deleted. When there is no bookings, rather than have a blank page, there will be a message displayed to the user that there is no bookings and a link be available to direct the user to the Make a booking page.
+
+- Page with no bookings:
+
+  ![image](https://user-images.githubusercontent.com/109948740/234650447-e941a541-4b63-4063-b6bd-866a266f0b52.png)
+
+- Booking example pending approval:
+  
+  ![image](https://user-images.githubusercontent.com/109948740/234651087-123a3973-01e5-49c3-a86e-731d06e1181e.png)
+
+- Booking that is approved:
+  
+  ![image](https://user-images.githubusercontent.com/109948740/234651788-01566b67-81d2-447d-b1bb-54f8933047e8.png)
+
+- - -
+
+### Update Bookings page:
+
+If the user wishes to update their booking, by clicking on the green EDIT BOOKING button, the user will be redirected to a new update bookings page which will have all the details of teh booking you wish to edit. When the user has made the required updates (provided that the user has followed the same criteria as the Make a bookings page e.g. guests between 1-6, cannot book a day in the past etc.) by clicking on the update booking button, the user will return to the Your Bookings page with the message (Booking has been updated successfully) and the booking will appear with the new updates.
+
+- Update Bookings page (with updates):
+
+ ![image](https://user-images.githubusercontent.com/109948740/234655023-1f15e69b-bf33-45a3-957f-f8fca745ff6a.png)
+ 
+- Yours Bookings page with the message and updated booking:
+
+ ![image](https://user-images.githubusercontent.com/109948740/234655294-5ac1cded-aeb5-46b7-b926-c6d93d6a4acb.png)
+
+ - - -
+ 
+### Delete Booking function:
+
+The final part to the bookings page is the delete function which is indicated to the user as a bright red button. Once the button is clicked a modal will appear with a warning to the user that the action will result in the booking being deleted, in which the user can either delete the booking or click close to return to the Your Bookings page.
+
+
+![image](https://user-images.githubusercontent.com/109948740/234656155-f7418fe7-9700-435c-a1df-2d41d724de67.png)
+
+- - -
+
+### Future Implementations
+
+- Special request textbox for customers/users. Allow users to leave a special reguest with their bookings.
+- Automated email sent to user - use Javascript to issue a automated email (via emailJS) outlining the details of their booking and that it is pending approval, plus an email to be issued to user when booking is approved.
+- A notifcation to be sent to the site admin that there are bookings pending approval.
+
+- - -
+
+### Accessibility
+
+- Using semantic HTML.
+- Using descriptive alt attributes on images on the site.
+- Providing information for screen readers where there are icons used and no text - such as the icons beside each menu section & footer icons.
+- Ensuring that there is a sufficient colour contrast throughout the site.
+
+- - -
+
+## Technologies Used
+
+### Languages Used:
+HTML, CSS, javascript and Python Django were used to create this website.
+
+### Frameworks, Libraries & Programs Used:
+
+Git - For version control.
+
+Github - To save and store the files for the website.
+
+Materialize CSS Version 1.0 - The framework for the website. Code for the navigation bar, collapsible for the menu, cards and form were used and modified. Additional CSS styling was also implemented in style.css.
+
+Google Fonts - To import the fonts used on the website.
+
+Font Awesome - For the iconography on the website.
+
+Google Dev Tools - To troubleshoot and test features, solve issues with responsiveness and styling.
+
+[Am I Responsive?](https://ui.dev/amiresponsive) - To show the website image on a range of devices.
+
+[Cloudinary](https://cloudinary.com/ip/gr-sea-gg-brand-home-base?utm_source=google&utm_medium=search&utm_campaign=goog_selfserve_brand_wk22_replicate_core_branded_keyword&utm_term=1329&campaignid=17601148700&adgroupid=141182782954&keyword=cloudinary&device=c&matchtype=e&adposition=&gad=1&gclid=EAIaIQobChMI0sPw_5fI_gIVqujtCh229gdBEAAYASAAEgL7YvD_BwE) - To easily upload images and videos to the cloud and automate smart manipulations of those media without installing any other software.
+
+[ElephantSQL](https://www.elephantsql.com/) - To install and manage PostgreSQL database.
+
+- - -
+
+## Deployment & Local Development
+
+### Deployment
+
+The site is deployed using Heroku - [TableFor2]()
+
+To Deploy the site using Heroku:
+
+1. Login (or signup) to Heroku.
+2. Create a new Heroku app.
+3. Click the Settings button.
+4. Select Reveal Config vars and input the environment variables.
+5. Click the Deploy button.
+6. Connect to GitHub.
+7. Search for the GitHub Repository [Neillcllghn/Tablefor2](https://github.com/Neillcllghn/Tablefor2)
+8. Click on Deploy Branch.
+9. Once app has completed building - Click on Open app on top right hand corner of page.
+
+The site has now been deployed.
+
+- - -
+
+### Local Development
+
+#### How to Fork
+
+To fork the Tablefor2 repository:
+
+1. Log in (or sign up) to Github.
+2. Go to the repository for this project, [Neillcllghn/Tablefor2](https://github.com/Neillcllghn/Tablefor2)
+3. Click the Fork button in the top right corner.
+
+#### How to Clone
+
+To clone the repository:
+
+1. Log in (or sign up) to GitHub.
+2. Go to the repository for this project, [Neillcllghn/Tablefor2](https://github.com/Neillcllghn/Tablefor2)
+3. Click on the code button, select whether you would like to clone with HTTPS, SSH or GitHub CLI and copy the link shown.
+4. Open the terminal in your code editor and change the current working directory to the location you want to use for the cloned directory.
+5. Type 'git clone' into the terminal and then paste the link you copied in step 3. Press enter.
+
+- - -
+
+## Testing
+
+Please see [TESTING.md]() for all testing performed
+
+- - -
+
+## Credits
+
+## Content:
+
+1. The sign-up submit button was inspired by a Youtube video titled: [CSS Button Hover Animation Effects using Only HTML & CSS](https://www.youtube.com/watch?v=zPcvAwp71uA)
+
+2. The icons in the footer in all pages of the website were taken from [Font Awesome:](https://fontawesome.com/)
+
+- - -
+
+# Media:
+
+- The images of the burger came from [Unsplash:](https://unsplash.com/).
+
+- - -
+
+###  Acknowledgments
