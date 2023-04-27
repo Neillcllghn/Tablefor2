@@ -44,17 +44,6 @@ h1, h2 {
     box-shadow: inset 200px 0 0 0 #f9e506;
   }
 
-  .form {
-    margin: 150px 10% 0 0;
-    color: #252525;
-    background-color: #fff;
-    max-width: 400px;
-    position: absolute;
-    left: 10%;
-    padding: 30px;
-    border: 5px solid black;
-  }
-  
   .messages{
     padding: 0.5em;
     color: #fff;
