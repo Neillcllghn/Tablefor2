@@ -405,18 +405,36 @@ Please see [TESTING.md](https://github.com/Neillcllghn/Tablefor2/blob/main/TESTI
 
 ## Credits
 
-## Content:
+### Code Used:
 
-1. The sign-up submit button was inspired by a Youtube video titled: [CSS Button Hover Animation Effects using Only HTML & CSS](https://www.youtube.com/watch?v=zPcvAwp71uA)
+1. The sign-up submit button was inspired by a Youtube video titled: [CSS Button Hover Animation Effects using Only HTML & CSS.](https://www.youtube.com/watch?v=zPcvAwp71uA)
 
-2. The icons in the footer in all pages of the website were taken from [Font Awesome:](https://fontawesome.com/)
+2. The messages css and coding used was from the Youtube video titled: [Django user login form and django messages.](https://www.youtube.com/watch?v=3c9eywCcRG4)
+
+3. The forms.py Clean function and error messages for the Bookings page was inspired by Youtube video titled: [Django forms | How to create beautiful forms in django with materialize css](https://www.youtube.com/watch?v=qte0MSKClVM)
+
+4. Inspriation in regards the views.py code came from Code Institute walkthrough projects Hello Django, Taskmanager, and I think Therefore I Blog
+
+### Content:
+
+1. The format of the make a bookings page was inspired by an article written by John Abdsho Khosrowabadi - [Django Tutorial On How To Create A Booking System For A Health Clinic.](https://blog.devgenius.io/django-tutorial-on-how-to-create-a-booking-system-for-a-health-clinic-9b1920fc2b78)
+
+2. All other content for the site, such as menu, booking form and instructions etc. were written by myself.
 
 - - -
 
-# Media:
+### Media:
 
-- The images of the burger came from [Unsplash:](https://unsplash.com/).
+1. The images of the burger came from [Unsplash:](https://unsplash.com/).
+
+2. The icons in the footer in all pages of the website were taken from [Font Awesome.](https://fontawesome.com/)
 
 - - -
 
-###  Acknowledgments
+###  Acknowledgments:
+
+I would like to acknowledge the following people:
+
+- Jubril Akolade - My Code Institute Mentor.
+- The Code Tutors for assisting me with errors I was running into from time to time and testing my code to confirm that they were free of bugs.
+- Ian Meigh - Graduate of Code Institute who helped out checking a 404 error in regards redirecting to home page function at the very beginining of the project.
