@@ -44,6 +44,8 @@ h1, h2 {
     box-shadow: inset 200px 0 0 0 #f9e506;
   }
 
+  /*-This was code used from Django user login form and django messages-*/
+
   .messages{
     padding: 0.5em;
     color: #fff;
@@ -57,7 +59,7 @@ h1, h2 {
     transition: visibility 0s, opacity 250ms, transform 250ms;
   }
   
-  
+   /*-This was code used from Django user login form and django messages-*/
   .messages.hide{
     padding: 0.5em;
     color: #fff;
