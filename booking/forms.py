@@ -21,6 +21,8 @@ class BookingForm(forms.ModelForm):
                                     'class': 'form-control', 'type': 'time'})
         }
 
+# This prevents the user from selecting more than 6 and less than 1 people.
+
     def clean_group_size(self):
         group_size = self.cleaned_data.get('group_size')
         if int(group_size) < 1 or int(group_size) > 6:
@@ -28,12 +30,16 @@ class BookingForm(forms.ModelForm):
                                   "please select between 1 and 6 guests")
         return group_size
 
+# This prevents the user from selecting a day in the past.
+
     def clean_day(self):
         day = self.cleaned_data.get('day')
         if day < date.today():
             raise ValidationError("You must select today's date "
                                   "or a future date")
         return day
+
+# This prevents the user from selecting a time in past.
 
     def clean_future_time_day(self):
         cleaned_data = super(BookingForm, self).clean()
@@ -52,6 +58,9 @@ class BookingForm(forms.ModelForm):
                 raise ValidationError("You must select a time in the future")
         else:
             raise ValidationError("The Time selected is incorrect")
+
+# This prevents the user from double booking.
+# It also allows user to edit bookings free of the double booking function.
 
     def clean(self):
         email = self.cleaned_data.get('email')
