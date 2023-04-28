@@ -111,6 +111,17 @@ Colour scheme used was adopted from the [Materialize CSS](https://materializecss
 
 The Font used is lato & Merriweather which is easy to read and easy on the eye.
 
+- - -
+
+### Imagery
+
+I did not use much imagery only the picture of the Burger on the Home page which gives the page the impression to the user that this is a resturant with good food.
+
+![image](https://user-images.githubusercontent.com/109948740/235203591-5bd54567-1b0e-4390-bee5-a618975abedb.png)
+
+
+- - -
+
 ## Features
 
 The website is comprised of a home page, login, register and sign out pages, a booking page, an update bookings page and a Your Bookings page.
