@@ -122,6 +122,51 @@ I did not use much imagery only the picture of the Burger on the Home page which
 
 - - -
 
+### Wireframes
+
+I decided to draw the website in both Desktop and Mobile view as this is how I planned out my project from the begining:
+
+#### Desktop view:
+- Home Page (Not logged in)
+
+ ![image](https://user-images.githubusercontent.com/109948740/235210490-de5c6e84-fbfb-4893-ad04-1d0d40faeac8.png)
+
+
+- Home Page (When logged in):
+
+ ![image](https://user-images.githubusercontent.com/109948740/235210775-821cc0c6-1442-4647-b264-2186c2d19a5f.png)
+
+
+- Make a Booking Page:
+
+ ![image](https://user-images.githubusercontent.com/109948740/235210930-81e0fdd5-6cac-4fe7-b0c2-74025305d09e.png)
+
+
+- Your Bookings Page:
+
+ ![image](https://user-images.githubusercontent.com/109948740/235211106-a71a3600-0b06-4ea3-b944-132dca0cb741.png)
+
+- - -
+
+#### Mobile View:
+
+- Home Page:
+
+![image](https://user-images.githubusercontent.com/109948740/235211523-18accd6f-4932-4e90-8537-ec3dd7c1bbf7.png) 
+
+
+- Make a Booking Page:
+
+ ![image](https://user-images.githubusercontent.com/109948740/235211631-b6093750-422f-43fb-bfd1-09eda9abcba1.png)
+
+
+- Your Bookings Page:
+
+ ![image](https://user-images.githubusercontent.com/109948740/235211870-535c9526-c258-4e52-813a-0fb03c28b009.png)
+
+
+- - -
+
 ## Features
 
 The website is comprised of a home page, login, register and sign out pages, a booking page, an update bookings page and a Your Bookings page.
