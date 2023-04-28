@@ -149,7 +149,9 @@ This consist of a title, a link to login if you are already have an account, a m
 
 ### Sign in page
 
-This consist of a title, a link to register if you do not have an account, a means to type in your username and password. Furthermore, it has a remember me checkbox just so the user's details will be saved on the system.
+This consist of a title, a link to register if you do not have an account, a means to type in your username and password. 
+
+TO NOTE: There is a remember me checkbox which is part of teh django library allauth which was used in this project that is not functioning (will be a future implemenation).
 
 ![image](https://user-images.githubusercontent.com/109948740/234366047-97a1815b-1afc-4f73-bf4d-5d9669d469a7.png)
 
@@ -223,6 +225,7 @@ The final part to the bookings page is the delete function which is indicated to
 - Special request textbox for customers/users. Allow users to leave a special reguest with their bookings.
 - Automated email sent to user - use Javascript to issue a automated email (via emailJS) outlining the details of their booking and that it is pending approval, plus an email to be issued to user when booking is approved.
 - A notifcation to be sent to the site admin that there are bookings pending approval.
+- Add a js listener for the checkbox in the Sign in page so that users can be automatically signed in when they logon to the website.
 
 - - -
 
