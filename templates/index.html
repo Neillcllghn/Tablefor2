@@ -8,9 +8,8 @@
         <div class="col s6 m2">
           {% load static %} <img src="{% static 'media/alireza-mirzabegi-FtUlp4THNI4-unsplash.jpg' %}" alt="Burger" class="circle responsive-img">
         </div>
-        <div class="col s10">
-          <span class="black-text">
-            <h3 id="trademark">Welcome to TableFor2</h3>
+        <div class="col s10 black-text">
+          <h3 id="trademark">Welcome to TableFor2</h3>
             <p>All you need for a great night and great food is all here!</p>
             <br>
             {% if user.is_authenticated %}
@@ -22,7 +21,6 @@
                 <br>
               <p>Please see our Times and Menu below.</p>
             {% endif %}
-          </span>
         </div>
       </div>
     </div>
