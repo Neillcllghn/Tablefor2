@@ -17,7 +17,7 @@ class BookingForm(forms.ModelForm):
         widgets = {
             'day': forms.DateInput(attrs={'class': 'form-control',
                                    'type': 'date'}),
-            'time': forms.TimeInput(attrs={'format': '%H',
+            'time': forms.TimeInput(attrs={
                                     'class': 'form-control', 'type': 'time'})
         }
 
