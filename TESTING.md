@@ -240,3 +240,21 @@ Google Chrome on Mac and Windows, Safari
 | Delete Booking - Close | A modal should appear stating to user that this action cannot be undone, when the user clicks on Close, they are redirected to the Your Bookings page | Click on close button in modal | Redirected back to Your Bookings page and booking is not deleted. | Pass|
 | Delete Booking - Delete | A modal should appear stating to user that this action cannot be undone, when the user clicks on Delete, they are redirected to the Your Bookings page with the selected booking deleted | Click on Delete button in modal | Redirected back to Your Bookings page and selected booking is deleted. | Pass|
 
+
+ - - -
+
+## BUGS
+
+### Solved Bugs
+
+| No | Bug | How I solved the issue |
+| :--- | :--- | :--- |
+| 1 |  | .  |
+
+- - -
+
+### Known Bugs
+
+| No | Bug | |
+| :--- | :--- | :--- |
+| 1 | . | |
