@@ -239,7 +239,7 @@ This consist of a title, a link to login if you are already have an account, a m
 
 This consist of a title, a link to register if you do not have an account, a means to type in your username and password. 
 
-TO NOTE: There is a remember me checkbox which is part of teh django library allauth which was used in this project that is not functioning (will be a future implemenation).
+TO NOTE: There is a remember me checkbox which is part of the django library allauth which was used in this project that is not functioning (will be a future implemenation).
 
 ![image](https://user-images.githubusercontent.com/109948740/234366047-97a1815b-1afc-4f73-bf4d-5d9669d469a7.png)
 
@@ -314,6 +314,7 @@ The final part to the bookings page is the delete function which is indicated to
 - Automated email sent to user - use Javascript to issue a automated email (via emailJS) outlining the details of their booking and that it is pending approval, plus an email to be issued to user when booking is approved.
 - A notifcation to be sent to the site admin that there are bookings pending approval.
 - Add a js listener for the checkbox in the Sign in page so that users can be automatically signed in when they logon to the website.
+- Error Messages will not appear for the user when they are editing a booking but the functions that prevent the user from booking outside of the parameters set (i.e. number of guest must be between 1-6, day and time must be in the present or future etc.) still apply. Will look to update website with this capability in the future.
 
 - - -
 
@@ -425,7 +426,7 @@ Please see [TESTING.md](https://github.com/Neillcllghn/Tablefor2/blob/main/TESTI
 
 ### Media:
 
-1. The images of the burger came from [Unsplash:](https://unsplash.com/).
+1. The images of the burger came from [Unsplash](https://unsplash.com/).
 
 2. The icons in the footer in all pages of the website were taken from [Font Awesome.](https://fontawesome.com/)
 
