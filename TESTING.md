@@ -175,7 +175,7 @@ Google Chrome on Mac and Windows, Safari
 | Navbar link - Hover | When hovered over a shading of the area will occur to indicate that the cursor is over link | Hovered over link | Shading appears | Pass|
 | **Menu** |  |  |  |  |
 |  |  |  |  |  |
-| Menu list | When click on, the menu will open to reveal the menu list and clicked again it will collapsible | Clicked collapsible list | List of menu appears and collapses when clicked on again. | Pass|
+| Menu list | When clicked on, the menu will open to reveal the menu list and when clicked again it will collapse | Click collapsible list | List of menu appears and collapses when clicked on again. | Pass|
 | **Footer** |  |  |  |  |
 |  |  |  |  |  |
 | Social media links | When clicking on social media links (displayed to users as icons courtesy of font awesome) an new window will appear therefore not closing the webpage the user is on | Clicked link | A new window will appear. | Pass|
