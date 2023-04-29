@@ -72,8 +72,7 @@ No errors were found when passing through the official (jigsaw) validator. Link 
 
 We used Lighthouse within the Chrome Developer Tools to test the performance, accessibility, best practices and SEO of the website.
 
-Overall, the lighthouse scores are very good, with one or two things that could be improved. A future implementation would be to convert all images to the webp format.
-
+Overall, the lighthouse scores are very good, with one thing that could be improved.
 ### Desktop Results
 
 Home Page:
@@ -133,11 +132,21 @@ Sign Out page:
 
 ### Testing User Stories
 
-`User/Customers visting the site`
-
 | Goals | How are they achieved? |
 | :--- | :--- | 
-| Provide a menu that the user can view. | Created a standard menu list that is collapsible thanks to JS and gives three of each of starter, main course and dessert. |
+| `User/Customers, both First time and returning customers` |
+|  |  |  |
+| Provide a menu that the user can view. | Created a standard menu list that is collapsible thanks to JS and gives three of each of starter, main course and dessert so that the user can see what is on offer. |
+| Provide select times for reservations that the user can view. | Times that the user can select will be displayed on the home page. |
+| Register for an account. | The description on the home page encourages new users to register for an account in order to make a booking. A register link is displayed on the navbar if a user is not logged in. |
+| Log in to my account. | If a user is not logged into an account, a login link is provided on the navbar. |
+| Make a booking (selecting a time and day). | A `Make a Booking` page will allow user selecting a specfic time by and day of their choosing. |
+| View a list of the users' bookings. | A `Your Bookings` page will allow the user to view all bookings made, and will state whether they are pending approval or are approved. |
+| Edit a booking. | When a user views their booking on the Your Bookings page, they are given the option to edit their booking (this option wiil only be available for pendng approval bookings). |
+| Delete a booking. | When a user views their booking on the Your Bookings page, they are given the option to delete their booking. When the user selects delete, a modal will pop up to confirm deletion and to let the user know that the booking be deleted and cannot be undone (this option wiil be available for both pendng approval and approved bookings). |
+| `Admin user` |
+|  |  |  |
+| Approve Bookings. | In the admin window, the bookings will be listed out in order of reservation dates and can be approved by selecting the checkbox beside each booking and clicking on accept from drop down menu. |
 
 
 ### Full Testing
@@ -166,13 +175,16 @@ Google Chrome on Mac and Windows, Safari
 | Navbar link - Hover | When hovered over a shading of the area will occur to indicate that the cursor is over link | Hovered over link | Shading appears | Pass|
 | **Menu** |  |  |  |  |
 |  |  |  |  |  |
-| Menu list | When click on, the menu will open to reveal the menu list and clicked again it will collapsible | Clicked collapsible list | List of menu appears and collapsibles when clicked on again | Pass|
+| Menu list | When click on, the menu will open to reveal the menu list and clicked again it will collapsible | Clicked collapsible list | List of menu appears and collapses when clicked on again. | Pass|
+| **Footer** |  |  |  |  |
+| Social media links | When clicking on  | Clicked collapsible list | List of menu appears and collapses when clicked on again. | Pass|
 
 `Make a booking Page`
 
 | Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
 | --- | --- | --- | --- | --- |
-| **NAVBAR** |  |  |  |  |
+| **Email** |  |  |  |  |
+| Email required | Before a booking can be made | Clicked collapsible list | List of menu appears and collapses when clicked on again. | Pass|
 
 
 
