@@ -38,7 +38,11 @@ I have gone through each page using Google Chrome Developer Tools to ensure that
 
 ### W3C CSS Validator
 
-No errors were found when passing through the official (jigsaw) validator. Link can be found [here](https://jigsaw.w3.org/css-validator/#validate_by_input).
+No errors were found when passing through the official (jigsaw) validator. Link to vaildator can be found [here](https://jigsaw.w3.org/css-validator/#validate_by_input).
+
+Image of Result:
+![image](https://user-images.githubusercontent.com/109948740/235303294-3061dc2d-8409-4df0-97cb-11bc5ee34b97.png)
+
 
 - - -
 
