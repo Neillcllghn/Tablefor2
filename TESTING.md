@@ -177,14 +177,66 @@ Google Chrome on Mac and Windows, Safari
 |  |  |  |  |  |
 | Menu list | When click on, the menu will open to reveal the menu list and clicked again it will collapsible | Clicked collapsible list | List of menu appears and collapses when clicked on again. | Pass|
 | **Footer** |  |  |  |  |
-| Social media links | When clicking on  | Clicked collapsible list | List of menu appears and collapses when clicked on again. | Pass|
+|  |  |  |  |  |
+| Social media links | When clicking on social media links (displayed to users as icons courtesy of font awesome) an new window will appear therefore not closing the webpage the user is on | Clicked link | A new window will appear. | Pass|
+| Footer will stick to bottom of page | Regardless of what content is displayed on the webpage, the footer will remain at the base of that page | Stick footer | Footer remains at bottom of page. | Pass|
+
+`Login Page`
+
+| Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
+| --- | --- | --- | --- | --- |
+| Username input - empty | This is a required field so the form should not submit if empty | Tried to submit the form with this field empty| Error message will appear to user requiring a username to proceed. | Pass|
+| Password input - empty | This is a required field so the form should not submit if empty | Tried to submit the form with this field empty| Error message will appear to user requiring a password to proceed. | Pass|
+| Incorrect username or password used | A flash message should display saying username/password incorrect - this is defensive programming - not letting user know which input is incorrect | Incorrect username/password entered| Message flashes to let the user know they have entered an incorrect username/password. | Pass|
+| Link to register page | This should redirect the user to the register page | Clicked link| Redirected to the register page. | Pass|
+
+`Register Page`
+
+| Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
+| --- | --- | --- | --- | --- |
+| Username input - empty | The username is a required field, so should not submit with no value | Tried to submit form with no value entered | Tooltip lets user know this value is required. | Pass|
+| Username input | If username is in use, message should flash to user | entered an in use username | Message flashed to say username already in use. | Pass|
+| Password input | This field should be at least 8 characters long | Entered password less than 8 characters long | Tooltip tells user the password should be at least 8 characters long. | Pass|
+| Password input - empty | The password is a required field, so should not submit with no value | Tried to submit form with no value entered | Tooltip lets user know this value is required. | Pass|
+| Register button | Should redirect user to the log in page and a successful message flashed | Created new user and submitted form | Redirected to the log in page and message flashed. | Pass|
+
 
 `Make a booking Page`
 
 | Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
 | --- | --- | --- | --- | --- |
 | **Email** |  |  |  |  |
-| Email required | Before a booking can be made | Clicked collapsible list | List of menu appears and collapses when clicked on again. | Pass|
+|  |  |  |  |  |
+| Email required | Before a booking can be made an email is needed | Click booking submit button without an email| Error message will appear to user requiring an email to proceed. | Pass|
+| Email required | Only an email (format of an email) can be inputted into the email field | Click booking submit button without an email | Error message will appear to user requiring an email to proceed. | Pass|
+| Different emails can allow for bookings on the same day | To allow the user to book for friends or colleagues on the same day that teh user has booked, the user can use their emails to make booking| Click booking submit button with email| Booking made successfully. | Pass|
+| **Number of People** |  |  |  |  |
+|  |  |  |  |  |
+| Selecting a number of guests between 1-6 | As noted on the bookings page, only between 1-6 people can be select per booking | Select number of people outside of the number 1-6| Error message will appear to user requiring number of guest between 1-6 to proceed. | Pass|
+| **Reservation Date** |  |  |  |  |
+|  |  |  |  |  |
+| Selecting a day of booking | A user cannot select a day in the past | Selecting a day in the past | Error message will appear to user requiring today's date or a day in the future to proceed. | Pass|
+| Selecting a day of booking (Double Booking) | Preventing the user from select a day that is already booked when creating a new booking (if same email is used). | Selecting a date that is already booked | Error message will appear to user stating that the booking exists for the email used. | Pass|
+| **Reservation Time** |  |  |  |  |
+|  |  |  |  |  |
+| Selecting a time of booking | A user cannot select a time in the past (Based on the GMT Irish timezone) | Selecting a time in the past | Error message will appear to user requiring time in the future to proceed. | Pass|
+| Selecting a time based on the specfic times outlined on website | A user cannot select a time that is outside the times outlined on the Home page | Selecting a time in outside of these times | Error message will appear to user requiring correct time to proceed. | Pass|
 
+`Your Bookings Page`
 
+| Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
+| --- | --- | --- | --- | --- |
+| **List of Bookings** |  |  |  |  |
+|  |  |  |  |  |
+| List of Bookings in order of day | As list of Bookings will appear on this page when bookings are made and are in order by Reservation date | List of Bookings in order of Reservation date | List will appear in order of reservation date. | Pass|
+| Status of Booking | The user can see approval status whether pending approval or approved | When booking is created, status pending approval will appear and user can edit or delete booking. When approved, status will appear as approve and the user can only delete booking | List of Bookings will appear with Pending Approval or Status approved. | Pass|
+| **Edit Bookings** |  |  |  |  |
+|  |  |  |  |  |
+| Edit Booking | User can edit a pendng approval status booking by clicking on Green Edit Booking | Click on Edit Booking button | Redirected to a new page called Update Booking. | Pass|
+| Make changes | User can edit a booking by adding addtional guests (Between 1-6), Todays' date or in the future, a time in the future, or change the email | Edit the number of guests, the day and time and change the email | Once clicked on the Update booking button, you are redirected to a Your Bookings page with the booking updated. | Pass|
+| **Delete Bookings** |  |  |  |  |
+|  |  |  |  |  |
+| Delete Booking - Modal | A modal should appear stating to user that this action cannot be undone | Click on Delete Booking button | Modal appears with Warning message that this acction cannot be undone. | Pass|
+| Delete Booking - Close | A modal should appear stating to user that this action cannot be undone, when the user clicks on Close, they are redirected to the Your Bookings page | Click on close button in modal | Redirected back to Your Bookings page and booking is not deleted. | Pass|
+| Delete Booking - Delete | A modal should appear stating to user that this action cannot be undone, when the user clicks on Delete, they are redirected to the Your Bookings page with the selected booking deleted | Click on Delete button in modal | Redirected back to Your Bookings page and selected booking is deleted. | Pass|
 
