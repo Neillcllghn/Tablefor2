@@ -26,7 +26,8 @@ I have gone through each page using Google Chrome Developer Tools to ensure that
 
 [W3C](https://validator.w3.org/) was used to validate the HTML on all pages of the website. I have checked the HTML via direct input and also by inspecting the page source and running this through the validator.
 
-* [Index Page](https://validator.w3.org/nu/?doc=https%3A%2F%2Fbookworm2022.herokuapp.com%2F) - No errors or warnings.
+* [Index Page](https://validator.w3.org/nu/?doc=https%3A%2F%2Ftablefor2-pp4.herokuapp.com%2F) - No errors or warnings.
+* [Booking Page]
 
 - - -
 
