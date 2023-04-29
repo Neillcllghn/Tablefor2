@@ -69,7 +69,7 @@ The client would like users of the site to register with the site to allow for u
 
 #### Key information for the site:
 - What is on the Menu.
-- What Times are availble for booking.
+- What Times are available for booking.
 - Register/Sign in page.
 - How to make a booking.
 - View bookings already made.
