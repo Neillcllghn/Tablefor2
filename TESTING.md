@@ -259,7 +259,13 @@ Google Chrome on Mac and Windows, Safari
 
 | No | Bug | How I solved the issue |
 | :--- | :--- | :--- |
-| 1 |  | .  |
+| 1 | Modal was not working. | Added Modal Trigger class to the `a` element instead of the `button` element which triggered the modal.  |
+| 2 | Index.html (Home Page) was not loading correctly when I tried to logout. When logging out, an error page appeared intead of the home page. | In addtion to the adding of the path to index.html as `path('', views.index, name='home')` to bookings app urls.py, I had to change the `LOGOUT_REDIRECT_URL = 'home'` in settings.py.  |
+| 3 | When intially testing the field for Number of people that a user can book, there was no limit to what the user can book, even book 0 people. | Created a function in the forms.py that will prevent user from going below 1 and exceeding 6 people `def clean_group_size(self)`.  |
+| 4 | When intially testing the field for Reservation Date, the user could book a day in the past and it will be accepted. | Created a function in the forms.py that will prevent user selecting a day in the past `def clean_day(self)`.  |
+| 5 | Another issue arrised when the user could select a time in the past and although I had created a function similar to the `def clean_day(self)` this did not have the desired affect as it prevented the user from booking in the future (or the present) in terms of the day if the time was not in the future at the local time of booking. | Created a function `def clean_future_time_day(self)` (with the assistance of the CI Tutors which were a great help) that took the current day and local time in an if statement and if the day is equal to the present day and the time was greater than the current time, then the user can proceed, else raise a `ValidationError`.  |
+| 6 | Even though the user can see the bookings they make and therefore double booking is unlikely, however in the event that the user does double book, a function was created to prevent this which was `def clean(self)`. However, this also prevented the user from editing bookings if it was on the same day or the same email was used. | I rewrote the code in both the `def clean(self)` to exclude bookings that contain the `instance` attribute using the `hasattr()` method and to filter for email. This had the desired effect.  |
+| 7 | Following up on the time issue, another issue arised when the local time (GMT irish) and the server time was not synced correctly and so this was causing the user to book a time that was in the past (in terms of the local time). | I did not realise at the time that the `TIME_ZONE` variable in `Settings.py` was set to `UTC` and so I changed this to `Europe\London` and this corrected this issue.  |
 
 - - -
 
@@ -267,4 +273,4 @@ Google Chrome on Mac and Windows, Safari
 
 | No | Bug | |
 | :--- | :--- | :--- |
-| 1 | . | |
+| 1 | Error messages will not appear for the user when `updating a booking` as is the case with the `create a new booking` but due to time consraints I have added this to the future implementation section in the README. | |
