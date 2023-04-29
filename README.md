@@ -1,7 +1,28 @@
 # TableFor2 - Django Resturant Booking System.
-Tablefor2 is a responsive website allowing visitors to view on a range of devices. It allows users to view times and a menu (consisting of Starter, Main course and Dessert) and make a booking/reservation while signed in.
+Tablefor2 is a responsive website allowing visitors to view on a range of devices. It allows users to view times and a menu (consisting of Starter, Main course and Dessert) and make a booking/reservation while signed in. 
 
-### IMAGE HERE
+I used the Responsive Viewer chrome extenstion to test the responsiveness on each web page which you can see below:
+
+- iPad view:
+
+![image](https://user-images.githubusercontent.com/109948740/235309201-bf2ac038-51b8-4ace-a8b2-d65709dfed66.png)
+
+
+- Laptop view:
+
+![image](https://user-images.githubusercontent.com/109948740/235309168-e8aae32c-03c0-4cf0-9f1c-4ea72fb28919.png)
+
+
+- Galaxy S9 view:
+
+![image](https://user-images.githubusercontent.com/109948740/235309280-e6408917-3d1e-42b4-848e-3bc67f4e75fb.png)
+
+
+- iPhone S5 view:
+
+![image](https://user-images.githubusercontent.com/109948740/235309465-0e404eaa-d6a2-4a62-9f47-1a3e524deb06.png)
+
+
 ---
 
 ## CONTENTS
@@ -346,7 +367,7 @@ Font Awesome - For the iconography on the website.
 
 Google Dev Tools - To troubleshoot and test features, solve issues with responsiveness and styling.
 
-[Am I Responsive?](https://ui.dev/amiresponsive) - To show the website image on a range of devices.
+[Responsive Viewer Chrome Extension](https://chrome.google.com/webstore/detail/responsive-viewer/inmopeiepgfljkpkidclfgbgbmfcennb?hl=en) - To show the website image on a range of devices.
 
 [Cloudinary](https://cloudinary.com/ip/gr-sea-gg-brand-home-base?utm_source=google&utm_medium=search&utm_campaign=goog_selfserve_brand_wk22_replicate_core_branded_keyword&utm_term=1329&campaignid=17601148700&adgroupid=141182782954&keyword=cloudinary&device=c&matchtype=e&adposition=&gad=1&gclid=EAIaIQobChMI0sPw_5fI_gIVqujtCh229gdBEAAYASAAEgL7YvD_BwE) - To easily upload images and videos to the cloud and automate smart manipulations of those media without installing any other software.
 
@@ -418,7 +439,7 @@ Please see [TESTING.md](https://github.com/Neillcllghn/Tablefor2/blob/main/TESTI
 
 ### Content:
 
-1. The format of the make a bookings page was inspired by an article written by John Abdsho Khosrowabadi - [Django Tutorial On How To Create A Booking System For A Health Clinic.](https://blog.devgenius.io/django-tutorial-on-how-to-create-a-booking-system-for-a-health-clinic-9b1920fc2b78)
+1. The format of the `Make a booking` page was inspired by an article written by John Abdsho Khosrowabadi - [Django Tutorial On How To Create A Booking System For A Health Clinic.](https://blog.devgenius.io/django-tutorial-on-how-to-create-a-booking-system-for-a-health-clinic-9b1920fc2b78)
 
 2. All other content for the site, such as menu, booking form and instructions etc. were written by myself.
 
@@ -439,3 +460,4 @@ I would like to acknowledge the following people:
 - Jubril Akolade - My Code Institute Mentor.
 - The Code Tutors for assisting me with errors I was running into from time to time and testing my code to confirm that they were free of bugs.
 - Ian Meigh - Graduate of Code Institute who helped out checking a 404 error in regards redirecting to home page function at the very beginining of the project.
+- Rachel Lane - my girlfriend - Assisted with drafting the menu that is used on the website
