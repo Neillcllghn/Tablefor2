@@ -1,10 +1,13 @@
 from django.shortcuts import render, redirect, get_object_or_404
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views import generic, View
 from datetime import datetime, timedelta
 from .models import Booking
 from django.contrib import messages
 from django.http import HttpResponseRedirect
 from django.views.generic.edit import FormView, CreateView
+from django.urls import reverse_lazy
 from .forms import BookingForm
 
 # this is to create an index/home page view
@@ -16,8 +19,7 @@ def index(request):
 
 # This class view allows user to view their bookings in list format.
 
-
-class BookingList(generic.ListView):
+class BookingList(LoginRequiredMixin, generic.ListView):
     model = Booking
     template_name = 'bookings.html'
 
@@ -27,10 +29,11 @@ class BookingList(generic.ListView):
 # View to create a booking.
 
 
-class BookingCreate(CreateView):
+class BookingCreate(LoginRequiredMixin, CreateView):
     model = Booking
     template_name = 'create_bookings.html'
     form_class = BookingForm
+    success_url = reverse_lazy('bookings')
 
     def get_success_url(self):
         return self.request.path
@@ -48,6 +51,7 @@ class BookingCreate(CreateView):
 # to update a booking
 
 
+@login_required
 def update_booking(request, booking_id):
     booking = get_object_or_404(Booking, id=booking_id)
     if request.method == 'POST':
@@ -75,6 +79,7 @@ def update_booking(request, booking_id):
 # delete a booking
 
 
+@login_required
 def delete_booking(request, booking_id):
     booking = get_object_or_404(Booking, id=booking_id)
     booking.delete()
