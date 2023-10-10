@@ -6,7 +6,7 @@ from datetime import datetime, timedelta
 from .models import Booking
 from django.contrib import messages
 from django.http import HttpResponseRedirect
-from django.views.generic.edit import FormView, CreateView
+from django.views.generic.edit import FormView, CreateView, UpdateView
 from django.urls import reverse_lazy
 from .forms import BookingForm
 
@@ -51,30 +51,28 @@ class BookingCreate(LoginRequiredMixin, CreateView):
 # to update a booking
 
 
-@login_required
-def update_booking(request, booking_id):
-    booking = get_object_or_404(Booking, id=booking_id)
-    if request.method == 'POST':
-        form = BookingForm(request.POST, instance=booking)
-        if form.is_valid():
-            email = form.cleaned_data['email']
-            day = form.cleaned_data['day']
+class BookingUpdate(LoginRequiredMixin, UpdateView):
+    model = Booking
+    template_name = 'update_bookings.html'
+    form_class = BookingForm
+    success_url = reverse_lazy('bookings')
 
-            Booking.objects.filter(email=booking).update(
-                email=email,
-                day=day,
-            ),
-            messages.add_message(request, messages.INFO,
-                                 'Booking was updated successfully')
-            form.save()
-            return redirect('bookings')
-        else:
-            print(form.add_error)
-    form = BookingForm(instance=booking)
-    context = {
-        'form': form
-    }
-    return render(request, 'update_bookings.html', context)
+    def get_success_url(self):
+        return self.request.path
+
+    def form_valid(self, form):
+        form.instance.user = self.request.user
+        messages.add_message(self.request, messages.INFO,
+                             'Booking was updated successfully')
+        return super().form_valid(form)
+
+    def form_invalid(self, form):
+        form.add_error(None, 'Ups.....Something went wrong')
+        return super().form_invalid(form)
+
+    def get_object(self, queryset=None):
+        booking_id = self.kwargs.get('booking_id')
+        return get_object_or_404(Booking, id=booking_id)
 
 # delete a booking
 
