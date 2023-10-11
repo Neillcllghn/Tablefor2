@@ -7,7 +7,7 @@ from .models import Booking
 from django.contrib import messages
 from django.http import HttpResponseRedirect, HttpResponse
 from django.views.generic.edit import FormView, CreateView, UpdateView
-from django.urls import reverse_lazy
+from django.urls import reverse
 from .forms import BookingForm
 
 # this is to create an index/home page view
@@ -33,10 +33,9 @@ class BookingCreate(LoginRequiredMixin, CreateView):
     model = Booking
     template_name = 'create_bookings.html'
     form_class = BookingForm
-    success_url = reverse_lazy('bookings')
 
     def get_success_url(self):
-        return self.request.path
+        return reverse('bookings')
 
     def form_valid(self, form):
         form.instance.user = self.request.user
@@ -56,10 +55,9 @@ class BookingUpdate(LoginRequiredMixin, UpdateView):
     model = Booking
     template_name = 'update_bookings.html'
     form_class = BookingForm
-    success_url = reverse_lazy('bookings')
 
     def get_success_url(self):
-        return self.request.path
+        return reverse('bookings')
 
     def form_valid(self, form):
         form.instance.user = self.request.user
@@ -88,4 +86,6 @@ def delete_booking(request, booking_id):
     booking = get_object_or_404(Booking, id=booking_id)
     if booking.user == request.user:
         booking.delete()
+    else:
+        messages.error(request, 'You are not authorized to delete this booking')
     return redirect('bookings')
