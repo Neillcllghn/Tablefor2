@@ -5,7 +5,7 @@ from django.views import generic, View
 from datetime import datetime, timedelta
 from .models import Booking
 from django.contrib import messages
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, HttpResponse
 from django.views.generic.edit import FormView, CreateView, UpdateView
 from django.urls import reverse_lazy
 from .forms import BookingForm
@@ -48,6 +48,7 @@ class BookingCreate(LoginRequiredMixin, CreateView):
         form.add_error(None, 'Ups.....Something went wrong')
         return super().form_invalid(form)
 
+
 # to update a booking
 
 
@@ -72,7 +73,12 @@ class BookingUpdate(LoginRequiredMixin, UpdateView):
 
     def get_object(self, queryset=None):
         booking_id = self.kwargs.get('booking_id')
-        return get_object_or_404(Booking, id=booking_id)
+        booking = get_object_or_404(Booking, id=booking_id)
+
+        if booking.user != self.request.user:
+            return HttpResponse('You are not authorized to update this booking')
+
+        return booking
 
 # delete a booking
 
@@ -80,5 +86,6 @@ class BookingUpdate(LoginRequiredMixin, UpdateView):
 @login_required
 def delete_booking(request, booking_id):
     booking = get_object_or_404(Booking, id=booking_id)
-    booking.delete()
+    if booking.user == request.user:
+        booking.delete()
     return redirect('bookings')

@@ -1,5 +1,7 @@
 # TableFor2 - Django Resturant Booking System.
-Tablefor2 is a responsive website allowing visitors to view on a range of devices. It allows users to view times and a menu (consisting of Starter, Main course and Dessert) and make a booking/reservation while signed in. 
+Tablefor2 is a responsive website allowing visitors to view on a range of devices. It allows users to view times and a menu (consisting of Starter, Main course and Dessert) and make a booking/reservation while signed in.
+
+**Note:** We've recently migrated our development environment from Gitpod to CodeAnywhere for a more efficient workflow.
 
 I used the Responsive Viewer chrome extenstion to test the responsiveness on each web page which you can see below:
 
@@ -260,7 +262,7 @@ This consist of a title, a link to login if you are already have an account, a m
 
 This consist of a title, a link to register if you do not have an account, a means to type in your username and password. 
 
-TO NOTE: There is a remember me checkbox which is part of the django library allauth which was used in this project that is not functioning (will be a future implemenation).
+TO NOTE: The Remember me checkbox is a feature of the django library allauth which was used in this projec - This feature is not functioning (will be implemented in a future update).
 
 ![image](https://user-images.githubusercontent.com/109948740/234366047-97a1815b-1afc-4f73-bf4d-5d9669d469a7.png)
 
@@ -308,7 +310,7 @@ This outlines the bookings the user has made, whether it is pending approval or 
 
 ### Update Bookings page:
 
-If the user wishes to update their booking, by clicking on the green EDIT BOOKING button, the user will be redirected to a new update bookings page which will have all the details of teh booking you wish to edit. When the user has made the required updates (provided that the user has followed the same criteria as the Make a bookings page e.g. guests between 1-6, cannot book a day in the past etc.) by clicking on the update booking button, the user will return to the Your Bookings page with the message (Booking has been updated successfully) and the booking will appear with the new updates.
+If the user wishes to update their booking, by clicking on the green EDIT BOOKING button, the user will be redirected to a new update bookings page which will have all the details of the booking you wish to edit. When the user has made the required updates (provided that the user has followed the same criteria as the Make a bookings page e.g. guests between 1-6, cannot book a day in the past etc.) by clicking on the update booking button, the user will return to the Your Bookings page with the message (Booking has been updated successfully) and the booking will appear with the new updates.
 
 - Update Bookings page (with updates):
 
@@ -335,7 +337,6 @@ The final part to the bookings page is the delete function which is indicated to
 - Automated email sent to user - use Javascript to issue a automated email (via emailJS) outlining the details of their booking and that it is pending approval, plus an email to be issued to user when booking is approved.
 - A notifcation to be sent to the site admin that there are bookings pending approval.
 - Add a js listener for the checkbox in the Sign in page so that users can be automatically signed in when they logon to the website.
-- Error Messages will not appear for the user when they are editing a booking but the functions that prevent the user from booking outside of the parameters set (i.e. number of guest must be between 1-6, day and time must be in the present or future etc.) still apply. Will look to update website with this capability in the future.
 
 - - -
 
