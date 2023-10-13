@@ -219,7 +219,7 @@ Google Chrome on Mac and Windows, Safari
 |  |  |  |  |  |
 | Email required | Before a booking can be made an email is needed | Click booking submit button without an email| Error message will appear to user requiring an email to proceed. | Pass|
 | Email required | Only an email (format of an email) can be inputted into the email field | Click booking submit button without an email | Error message will appear to user requiring an email to proceed. | Pass|
-| Different emails can allow for bookings on the same day | To allow the user to book for friends or colleagues on the same day that teh user has booked, the user can use their emails to make booking| Click booking submit button with email| Booking made successfully. | Pass|
+| Different emails can allow for bookings on the same day | To allow the user to book for friends or colleagues on the same day that the user has booked, the user can use their emails to make booking| Click booking submit button with email| Booking made successfully. | Pass|
 | **Number of People** |  |  |  |  |
 |  |  |  |  |  |
 | Selecting a number of guests between 1-6 | As noted on the bookings page, only between 1-6 people can be select per booking | Select number of people outside of the number 1-6| Error message will appear to user requiring number of guest between 1-6 to proceed. | Pass|
@@ -244,12 +244,15 @@ Google Chrome on Mac and Windows, Safari
 |  |  |  |  |  |
 | Edit Booking | User can edit a pendng approval status booking by clicking on Green Edit Booking | Click on Edit Booking button | Redirected to a new page called Update Booking. | Pass|
 | Make changes | User can edit a booking by adding addtional guests (Between 1-6), Todays' date or in the future, a time in the future, or change the email | Edit the number of guests, the day and time and change the email | Once clicked on the Update booking button, you are redirected to a Your Bookings page with the booking updated. | Pass|
+| Edit Booking - Editing another user's booking | When logged in and trying to edit another user's booking by directly copying the url of that booking, the user doing so will be directed to a 404 page with warning | copy a url for editing another user's booking | Redirected back to 404 not found page. | Pass|
+| Edit Booking - Editing another user's booking while logged out | When logged out and trying to edit another user's booking by directly copying the url of that booking, the user doing so will be redirected the sign in page | copy a url for editing another user's booking | Redirected back to sign in page. | Pass|
 | **Delete Bookings** |  |  |  |  |
 |  |  |  |  |  |
 | Delete Booking - Modal | A modal should appear stating to user that this action cannot be undone | Click on Delete Booking button | Modal appears with Warning message that this acction cannot be undone. | Pass|
 | Delete Booking - Close | A modal should appear stating to user that this action cannot be undone, when the user clicks on Close, they are redirected to the Your Bookings page | Click on close button in modal | Redirected back to Your Bookings page and booking is not deleted. | Pass|
 | Delete Booking - Delete | A modal should appear stating to user that this action cannot be undone, when the user clicks on Delete, they are redirected to the Your Bookings page with the selected booking deleted | Click on Delete button in modal | Redirected back to Your Bookings page and selected booking is deleted. | Pass|
-
+| Delete Booking - Deleting another user's booking | When logged in and trying to delete another user's booking by directly copying the url of that booking, the user doing so will be redirected the the home page | copy a url for deleting another user's booking | Redirected back to home page. | Pass|
+| Delete Booking - Deleting another user's booking while logged out | When logged out and trying to delete another user's booking by directly copying the url of that booking, the user doing so will be redirected the sign in page | copy a url for deleting another user's booking | Redirected back to sign in page. | Pass|
 
  - - -
 
@@ -266,6 +269,7 @@ Google Chrome on Mac and Windows, Safari
 | 5 | Another issue arrised when the user could select a time in the past and although I had created a function similar to the `def clean_day(self)` this did not have the desired affect as it prevented the user from booking in the future (or the present) in terms of the day if the time was not in the future at the local time of booking. | Created a function `def clean_future_time_day(self)` (with the assistance of the CI Tutors which were a great help) that took the current day and local time in an if statement and if the day is equal to the present day and the time was greater than the current time, then the user can proceed, else raise a `ValidationError`.  |
 | 6 | Even though the user can see the bookings they make and therefore double booking is unlikely, however in the event that the user does double book, a function was created to prevent this which was `def clean(self)`. However, this also prevented the user from editing bookings if it was on the same day or the same email was used. | I rewrote the code in both the `def clean(self)` to exclude bookings that contain the `instance` attribute using the `hasattr()` method and to filter for email. This had the desired effect.  |
 | 7 | Following up on the time issue, another issue arised when the local time (GMT irish) and the server time was not synced correctly and so this was causing the user to book a time that was in the past (in terms of the local time). | I did not realise at the time that the `TIME_ZONE` variable in `Settings.py` was set to `UTC` and so I changed this to `Europe\London` and this corrected this issue.  |
+| 8 | Error messages will not appear for the user when `updating a booking` as is the case with the `create a new booking` but due to time consraints I have added this to the future implementation section in the README. | I resolved the issue by rewriting the code chnaging from a function to a class based view similar to the BookingCreate Class..  |
 
 - - -
 
@@ -273,4 +277,4 @@ Google Chrome on Mac and Windows, Safari
 
 | No | Bug | |
 | :--- | :--- | :--- |
-| 1 | Error messages will not appear for the user when `updating a booking` as is the case with the `create a new booking` but due to time consraints I have added this to the future implementation section in the README. | |
+| 1 | When a user trys to update another user's booking - they are directed to a 404 page with a warning message. | due to time constraints I was unable to create a more user friendly view (in which I will state in future implementaion section of the README file), however the function prevent any user from updating another user's booking which for now serves its purpose|
