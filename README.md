@@ -1,7 +1,7 @@
 # TableFor2 - Django Resturant Booking System.
 Tablefor2 is a responsive website allowing visitors to view on a range of devices. It allows users to view times and a menu (consisting of Starter, Main course and Dessert) and make a booking/reservation while signed in.
 
-**Note:** We've recently migrated our development environment from Gitpod to CodeAnywhere for a more efficient workflow.
+**Note:** I have recently migrated the development environment from Gitpod to CodeAnywhere for a more efficient workflow.
 
 I used the Responsive Viewer chrome extenstion to test the responsiveness on each web page which you can see below:
 
@@ -312,6 +312,8 @@ This outlines the bookings the user has made, whether it is pending approval or 
 
 If the user wishes to update their booking, by clicking on the green EDIT BOOKING button, the user will be redirected to a new update bookings page which will have all the details of the booking you wish to edit. When the user has made the required updates (provided that the user has followed the same criteria as the Make a bookings page e.g. guests between 1-6, cannot book a day in the past etc.) by clicking on the update booking button, the user will return to the Your Bookings page with the message (Booking has been updated successfully) and the booking will appear with the new updates.
 
+**Note:** Improvement to code allows the user to be informed of any errors as mentioned above regarding the criteria whenever an error is encountered.
+
 - Update Bookings page (with updates):
 
  ![image](https://user-images.githubusercontent.com/109948740/234655023-1f15e69b-bf33-45a3-957f-f8fca745ff6a.png)
@@ -334,6 +336,7 @@ The final part to the bookings page is the delete function which is indicated to
 ### Future Implementations
 
 - Special request textbox for customers/users. Allow users to leave a special reguest with their bookings.
+- More user friendly viewing of any unauthorized access such as trying to update another users' booking.
 - Automated email sent to user - use Javascript to issue a automated email (via emailJS) outlining the details of their booking and that it is pending approval, plus an email to be issued to user when booking is approved.
 - A notifcation to be sent to the site admin that there are bookings pending approval.
 - Add a js listener for the checkbox in the Sign in page so that users can be automatically signed in when they logon to the website.
