@@ -4,8 +4,8 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views import generic, View
 from datetime import datetime, timedelta
 from .models import Booking
+from django.http import HttpResponse, Http404
 from django.contrib import messages
-from django.http import HttpResponseRedirect, HttpResponse
 from django.views.generic.edit import FormView, CreateView, UpdateView
 from django.urls import reverse
 from .forms import BookingForm
@@ -74,7 +74,7 @@ class BookingUpdate(LoginRequiredMixin, UpdateView):
         booking = get_object_or_404(Booking, id=booking_id)
 
         if booking.user != self.request.user:
-            return HttpResponse('You are not authorized to update this booking')
+            raise Http404("Booking not found or you are not authorized to update this booking.")
 
         return booking
 
@@ -86,6 +86,6 @@ def delete_booking(request, booking_id):
     booking = get_object_or_404(Booking, id=booking_id)
     if booking.user == request.user:
         booking.delete()
+        return redirect('bookings')
     else:
-        messages.error(request, 'You are not authorized to delete this booking')
-    return redirect('bookings')
+        return redirect('home')
